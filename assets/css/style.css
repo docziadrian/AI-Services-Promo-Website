@@ -57,6 +57,15 @@ nav ul li a:hover {
     justify-content: center;
 }
 
+.htext {
+    padding: 12px;
+    margin: auto;
+}
+
+.hero ul {
+    list-style: none;
+}
+
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
