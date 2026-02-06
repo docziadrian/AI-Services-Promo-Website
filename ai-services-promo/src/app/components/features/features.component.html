@@ -1,0 +1,13 @@
+<section class="features">
+  <h2>Why Choose Us?</h2>
+  <p class="features-subtitle">We provide cutting-edge AI solutions tailored to your business needs</p>
+  <div class="feature-list">
+    @for (feature of features; track feature.title) {
+      <div class="feature">
+        <img [src]="feature.icon" [alt]="feature.title" class="feature-icon" />
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    }
+  </div>
+</section>

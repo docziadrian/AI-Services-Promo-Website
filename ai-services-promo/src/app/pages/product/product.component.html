@@ -1,0 +1,14 @@
+<section class="page-header">
+  <h1>Our Products</h1>
+  <p>Explore our suite of AI-powered APIs and services</p>
+</section>
+<section class="products-grid">
+  @for (product of products; track product.title) {
+    <div class="product-card">
+      <span class="product-icon">{{ product.icon }}</span>
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description }}</p>
+      <a routerLink="/contact" class="btn btn-outline">Learn More</a>
+    </div>
+  }
+</section>

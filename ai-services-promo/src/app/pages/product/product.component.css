@@ -1,0 +1,73 @@
+.page-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: #ccc;
+  font-size: 1.125rem;
+}
+
+.products-grid {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  margin-bottom: 0.75rem;
+}
+
+.product-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid #6c63ff;
+  color: #6c63ff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: #6c63ff;
+  color: #fff;
+}

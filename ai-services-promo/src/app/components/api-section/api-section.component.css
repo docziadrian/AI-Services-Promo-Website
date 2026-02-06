@@ -1,0 +1,51 @@
+.api-section {
+  padding: 4rem 2rem;
+}
+
+.api-section:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.api-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.api-section-reverse .api-content {
+  flex-direction: row;
+}
+
+.api-image {
+  flex: 1;
+}
+
+.api-image img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.api-text {
+  flex: 1;
+}
+
+.api-text h2 {
+  font-size: 1.75rem;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.api-text p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .api-content {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}

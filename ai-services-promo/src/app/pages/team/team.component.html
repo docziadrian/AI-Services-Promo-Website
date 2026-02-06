@@ -1,0 +1,14 @@
+<section class="page-header">
+  <h1>Our Team</h1>
+  <p>Meet the minds behind our AI solutions</p>
+</section>
+<section class="team-grid">
+  @for (member of members; track member.name) {
+    <div class="team-card">
+      <span class="avatar">{{ member.avatar }}</span>
+      <h3>{{ member.name }}</h3>
+      <span class="role">{{ member.role }}</span>
+      <p>{{ member.bio }}</p>
+    </div>
+  }
+</section>
