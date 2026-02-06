@@ -1,0 +1,365 @@
+.team-hero {
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: #fff;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-hero-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.team-hero-text {
+    flex: 1;
+}
+
+.team-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.team-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.team-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.team-hero-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+}
+
+.team-members {
+    padding: 5rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+.team-members h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2E7D32;
+}
+
+.team-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.team-card-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.team-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card-content {
+    padding: 2rem;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    color: #2E7D32;
+    margin-bottom: 0.5rem;
+}
+
+.team-card-role {
+    display: inline-block;
+    background: #E8F5E9;
+    color: #2E7D32;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.team-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.core-values {
+    padding: 5rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.core-values h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2E7D32;
+}
+
+.values-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: #E8F5E9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-icon img {
+    width: 36px;
+    height: 36px;
+}
+
+.value-card h3 {
+    font-size: 1.3rem;
+    color: #2E7D32;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.team-culture {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.culture-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.culture-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.culture-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+.culture-text {
+    flex: 1;
+}
+
+.culture-text h2 {
+    font-size: 2.5rem;
+    color: #2E7D32;
+    margin-bottom: 1.5rem;
+}
+
+.culture-text p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.culture-benefits {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.culture-benefits li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.culture-benefits li .checkmark {
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.team-cta {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: #fff;
+}
+
+.team-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.team-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.team-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.team-cta .btn-primary {
+    background: #fff;
+    color: #4CAF50;
+}
+
+.team-cta .btn-primary:hover {
+    background: #E8F5E9;
+}
+
+.team-cta .btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.team-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 992px) {
+    .team-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .team-hero p {
+        max-width: 100%;
+    }
+
+    .culture-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .culture-benefits li {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-hero {
+        padding: 5rem 1.5rem 3rem;
+    }
+
+    .team-hero h1 {
+        font-size: 2rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-cta h2 {
+        font-size: 2rem;
+    }
+
+    .culture-text h2 {
+        font-size: 2rem;
+    }
+}

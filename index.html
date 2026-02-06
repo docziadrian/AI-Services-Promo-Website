@@ -8,54 +8,244 @@
 </head>
 <body>
     <header>
-        <div class="logo">AI Services</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">Product</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="team.html">Team</a></li>
-            </ul>
-        </nav>
+        <div id="navbar-container"></div>
     </header>
     <main>
         <section class="hero">
-            <div class="">
-                <img src="./assets/illustrations/undraw_chat_bot_re_e2gj.svg" alt="">
-            </div>
-            <div class="htext">
-                <h1>Revolutionize Your Business with AI</h1>
-                <p>Discover our suite of AI-driven APIs designed to enhance your operations and drive innovation.</p>
-                <p>Features:</p>
-                <ul>
-                    <li>- Conversational AI</li>
-                    <li>- Customizable</li>
-                    <li>- Natural Language Processing</li>
-                    <li>- Secure Data Processing</li>
-                </ul>
-                <a href="product.html" class="btn">Learn More</a>
+            <div class="hero-content">
+                
+                <div class="hero-image">
+                    <img src="./assets/illustrations/undraw_chat_bot_re_e2gj.svg" alt="AI Chatbot Illustration">
+                </div>
+                <div class="hero-text">
+                    <span class="hero-badge">AI-Powered Solutions</span>
+                    <h1>Revolutionize Your Business with AI</h1>
+                    <p>Discover our suite of AI-driven APIs designed to enhance your operations and drive innovation.</p>
+                    <div class="hero-features">
+                        <div class="hero-feature-item">
+                            <span class="checkmark">✓</span> Conversational AI
+                        </div>
+                        <div class="hero-feature-item">
+                            <span class="checkmark">✓</span> Customizable Solutions
+                        </div>
+                        <div class="hero-feature-item">
+                            <span class="checkmark">✓</span> Natural Language Processing
+                        </div>
+                        <div class="hero-feature-item">
+                            <span class="checkmark">✓</span> Secure Data Processing
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="./pages/product.html" class="btn btn-primary">Learn More</a>
+                        <a href="./pages/pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="features">
             <h2>Why Choose Us?</h2>
+            <p class="features-subtitle">We provide cutting-edge AI solutions tailored to your business needs</p>
             <div class="feature-list">
                 <div class="feature">
+                    <div class="feature-icon">
+                        <img src="./assets/icons/beaker.svg" alt="Cutting-Edge Technology Icon">
+                    </div>
                     <h3>Cutting-Edge Technology</h3>
                     <p>Leverage the latest advancements in AI to stay ahead of the competition.</p>
                 </div>
                 <div class="feature">
+                    <div class="feature-icon">
+                        <img src="./assets/icons/briefcase.svg" alt="Briefcase Technology Icon">
+                    </div>
                     <h3>Scalable Solutions</h3>
                     <p>Our APIs are designed to grow with your business needs.</p>
                 </div>
                 <div class="feature">
+                    <div class="feature-icon">
+                        <img src="./assets/icons/computer-desktop.svg" alt="Computer Icon">
+                    </div>
                     <h3>Easy Integration</h3>
                     <p>Seamlessly integrate our APIs into your existing systems.</p>
                 </div>
             </div>
         </section>
+
+
+        <section class="api-section api-section-reverse">
+            <div class="api-content">
+                <div class="api-text">
+                    <h2>Intelligent Web Development API</h2>
+                    <p>Transform your development workflow with our AI-powered web development API. Automatically generate responsive layouts, optimize code structure, and receive intelligent suggestions for improving user experience. Our machine learning algorithms analyze your project requirements and deliver production-ready code snippets, reducing development time by up to 60% while maintaining industry best practices and accessibility standards.</p>
+                    <ul class="api-features">
+                        <li>Automatic code generation and optimization</li>
+                        <li>Real-time accessibility compliance checking</li>
+                        <li>Intelligent component recommendations</li>
+                        <li>Performance optimization suggestions</li>
+                    </ul>
+                    <div class="api-buttons">
+                        <a href="./pages/product.html#web-dev" class="btn btn-primary">Explore API</a>
+                        <a href="./pages/pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
+                <div class="api-image">
+                    <img src="./assets/illustrations/undraw_web_development_0l6v.svg" alt="Web Development Illustration">
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section">
+            <div class="api-content">
+                <div class="api-image">
+                    <img src="./assets/illustrations/undraw_security_re_a2rk.svg" alt="Security Illustration">
+                </div>
+                <div class="api-text">
+                    <h2>Advanced Security & Threat Detection</h2>
+                    <p>Protect your digital assets with our cutting-edge AI security API that monitors, analyzes, and neutralizes threats in real-time. Using advanced pattern recognition and behavioral analysis, our system identifies suspicious activities, prevents unauthorized access, and ensures compliance with international security standards. Experience enterprise-grade protection with automated threat response, anomaly detection, and comprehensive security reporting that keeps your business safe 24/7.</p>
+                    <ul class="api-features">
+                        <li>Real-time threat detection and prevention</li>
+                        <li>Behavioral anomaly analysis</li>
+                        <li>Automated incident response</li>
+                        <li>Compliance monitoring and reporting</li>
+                    </ul>
+                    <div class="api-buttons">
+                        <a href="./pages/product.html#security" class="btn btn-primary">Explore API</a>
+                        <a href="./pages/pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section api-section-reverse">
+            <div class="api-content">
+                <div class="api-text">
+                    <h2>AI-Powered Code Assistant</h2>
+                    <p>Elevate your coding capabilities with our intelligent code assistant API that understands context, suggests improvements, and helps you write better code faster. Whether you're debugging complex issues, refactoring legacy systems, or learning new frameworks, our AI provides instant, accurate assistance. It analyzes your codebase, identifies potential bugs, suggests optimizations, and even generates comprehensive documentation, making you a more productive and confident developer.</p>
+                    <ul class="api-features">
+                        <li>Context-aware code completion</li>
+                        <li>Automated bug detection and fixes</li>
+                        <li>Code refactoring recommendations</li>
+                        <li>Auto-generated documentation</li>
+                    </ul>
+                    <div class="api-buttons">
+                        <a href="./pages/product.html#code-assistant" class="btn btn-primary">Explore API</a>
+                        <a href="./pages/pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
+                <div class="api-image">
+                    <img src="./assets/illustrations/undraw_proud_coder_re_exuy.svg" alt="Coder Illustration">
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section">
+            <div class="api-content">
+                <div class="api-image">
+                    <img src="./assets/illustrations/undraw_optimize_image_re_3tb1.svg" alt="Image Optimization Illustration">
+                </div>
+                <div class="api-text">
+                    <h2>Smart Image Optimization Engine</h2>
+                    <p>Revolutionize your media workflow with our AI-driven image optimization API that automatically enhances, compresses, and formats images for peak performance across all devices. Our intelligent algorithms analyze each image to determine optimal compression ratios, apply smart cropping, remove backgrounds, and convert to modern formats like WebP and AVIF. Reduce bandwidth costs by up to 80% while maintaining exceptional visual quality, improving page load times, and delivering superior user experiences that boost engagement and conversions.</p>
+                    <ul class="api-features">
+                        <li>Intelligent compression without quality loss</li>
+                        <li>Automatic format conversion and responsive sizing</li>
+                        <li>AI-powered background removal</li>
+                        <li>Smart cropping and object detection</li>
+                    </ul>
+                    <div class="api-buttons">
+                        <a href="./pages/product.html#image-optimization" class="btn btn-primary">Explore API</a>
+                        <a href="./pages/pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section api-section-reverse">
+            <div class="api-content">
+                <div class="api-text">
+                    <h2>Biometric Authentication API</h2>
+                    <p>Secure your applications with our state-of-the-art biometric authentication API featuring fingerprint recognition, facial verification, and multi-factor authentication. Deliver frictionless user experiences while maintaining the highest security standards through advanced liveness detection, encrypted biometric templates, and compliance with GDPR and CCPA regulations. Our API integrates seamlessly with existing systems, supports multiple biometric modalities, and provides instant authentication with industry-leading accuracy rates exceeding 99.9%, eliminating password vulnerabilities and reducing fraud.</p>
+                    <ul class="api-features">
+                        <li>Multi-modal biometric authentication</li>
+                        <li>Advanced liveness detection</li>
+                        <li>End-to-end encryption</li>
+                        <li>Compliance with global privacy standards</li>
+                    </ul>
+                    <div class="api-buttons">
+                        <a href="./pages/product.html#biometric-auth" class="btn btn-primary">Explore API</a>
+                        <a href="./pages/pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
+                <div class="api-image">
+                    <img src="./assets/illustrations/undraw_fingerprint_login_re_t71l.svg" alt="Fingerprint Login Illustration">
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section">
+            <div class="api-content">
+                <div class="api-image">
+                    <img src="./assets/illustrations/undraw_chatting_re_j55r.svg" alt="Chatting Illustration">
+                </div>
+                <div class="api-text">
+                    <h2>Conversational AI & Chatbot Platform</h2>
+                    <p>Transform customer interactions with our advanced conversational AI API that powers intelligent chatbots capable of understanding context, emotions, and complex queries. Built on cutting-edge natural language processing, our platform enables you to create sophisticated virtual assistants that handle customer support, lead generation, and sales inquiries with human-like understanding. Support for 50+ languages, seamless handoff to human agents, and continuous learning from interactions ensure your customers receive instant, accurate, and personalized responses that drive satisfaction and loyalty.</p>
+                    <ul class="api-features">
+                        <li>Natural language understanding in 50+ languages</li>
+                        <li>Sentiment analysis and emotion detection</li>
+                        <li>Seamless human agent handoff</li>
+                        <li>Continuous learning and improvement</li>
+                    </ul>
+                    <div class="api-buttons">
+                        <a href="./pages/product.html#conversational-ai" class="btn btn-primary">Explore API</a>
+                        <a href="./pages/pricing.html" class="btn btn-secondary">View Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Clients Worldwide</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Uptime Guarantee</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10M+</span>
+                    <span class="stat-label">API Calls Daily</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Available</span>
+                </div>
+            </div>
+        </section>
+        <section class="cta">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Get started today and see how our AI solutions can drive your success.</p>
+            <a href="./pages/contact.html" class="btn btn-primary">Get Started</a>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2026 AI Services. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">AI Services</div>
+            <div class="footer-links">
+                <a href="./pages/product.html">Product</a>
+                <a href="./pages/pricing.html">Pricing</a>
+                <a href="./pages/team.html">Team</a>
+                <a href="./pages/contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 AI Services. All rights reserved.</p>
+        </div>
     </footer>
+    <script src="./display/navbar.js"></script>
+    <script>
+        document.getElementById('navbar-container').innerHTML = navbar();
+    </script>
 </body>
 </html>
