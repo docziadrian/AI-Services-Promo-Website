@@ -1,0 +1,424 @@
+import { Injectable } from '@angular/core';
+import axios from 'axios';
+import { ApiResponse } from '../interfaces/apiresponse';
+import { environment } from '../environments/environment';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ApiService {
+  SERVER = environment.serverUrl;
+
+  constructor() {}
+  private axiosConfig = { withCredentials: true };
+
+  private normalizePath(path: string): string {
+    if (path.startsWith('http') || path.startsWith('/')) return path;
+    return `/${path}`;
+  }
+
+  async registration(table: string, data: any) {
+    try {
+      const response = await axios.post(
+        `${this.SERVER}/${table}/registration`,
+        data,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        message: 'A regisztráció sikeres! Most már beléphetsz!',
+        data: response.data, // nem kötelező visszaköldeni
+      };
+    } catch (err: any) {
+      return {
+        status: 500,
+        message: err.response.data.error,
+      };
+    }
+  }
+
+  async login(table: string, data: any) {
+    try {
+      const response = await axios.post(
+        `${this.SERVER}/${table}/login`,
+        data,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        message: 'Sikeres belépés!',
+        data: response.data, // nem kötelező visszaköldeni
+      };
+    } catch (err: any) {
+      return {
+        status: 500,
+        message: err.response.data.error,
+      };
+    }
+  }
+
+  async sendAIMessage(message: string): Promise<ApiResponse> {
+    try {
+      const response = await axios.post(
+        `${this.SERVER}/aichat`,
+        { message },
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Hiba történt az AI válasz lekérésekor!',
+      };
+    }
+  }
+
+  async upload(formData: FormData): Promise<ApiResponse> {
+    try {
+      const response = await axios.post(
+        `${this.SERVER}/upload`,
+        formData,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Nem sikerült a fájl feltöltése!',
+      };
+    }
+  }
+
+  async deleteImage(filename: string): Promise<ApiResponse> {
+    try {
+      const response = await axios.delete(
+        `${this.SERVER}/image/${filename}`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Nem sikerült a fájl törlése!',
+      };
+    }
+  }
+
+  async sendmail(data: object): Promise<ApiResponse> {
+    try {
+      const response = await axios.post(
+        `${this.SERVER}/sendmail`,
+        data,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        message: response.data.message,
+      };
+    } catch (err: any) {
+      return {
+        status: 500,
+        message: err.response.data.error,
+      };
+    }
+  }
+
+  // GET ALL record from 'table'  -> GET http://localhost:3000/users
+
+  async selectAll(table: string): Promise<ApiResponse> {
+    try {
+      const response = await axios.get(
+        `${this.SERVER}/${table}`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Hiba történt az adatok elérésekor!',
+      };
+    }
+  }
+
+  // GET ONE record from 'table' by 'id'  -> GET http://localhost:3000/users/5
+
+  async select(table: string, id: number): Promise<ApiResponse> {
+    try {
+      const response = await axios.get(
+        `${this.SERVER}/${table}/${id}`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Hiba történt az adatok elérésekor!',
+      };
+    }
+  }
+
+  async selectAccomodationImages(accomodationId: number): Promise<ApiResponse> {
+    try {
+      const response = await axios.get(
+        `${this.SERVER}/accomodations/${accomodationId}/images`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Nem sikerült a képek betöltése!',
+      };
+    }
+  }
+
+  async selectAccomodationFeatures(
+    accomodationId: number
+  ): Promise<ApiResponse> {
+    try {
+      const response = await axios.get(
+        `${this.SERVER}/accomodations/${accomodationId}/features`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Nem sikerült a tulajdonságok betöltése!',
+      };
+    }
+  }
+
+  // VÉLEMÉNYEK
+  async selectAccomodationReviews(
+    accommodationId: number,
+    limit: number = 10,
+    offset: number = 0,
+    sort: 'recent' | 'rating' = 'recent'
+  ): Promise<ApiResponse> {
+    try {
+      const url = `${this.SERVER}/accomodations/${accommodationId}/reviews?limit=${limit}&offset=${offset}&sort=${sort}`;
+      const response = await fetch(url);
+      return await response.json();
+    } catch (error) {
+      return { status: 500, message: 'Hiba a vélemények lekérésekor' };
+    }
+  }
+
+  async selectAccomodationReviewStats(
+    accommodationId: number
+  ): Promise<ApiResponse> {
+    try {
+      const url = `${this.SERVER}/accomodations/${accommodationId}/reviews/stats`;
+      const response = await fetch(url);
+      return await response.json();
+    } catch (error) {
+      return { status: 500, message: 'Hiba a statisztikák lekérésekor' };
+    }
+  }
+
+  // VÉLEMÉNYEK VÉGE
+
+  async selectAccomodationAvailability(
+    accommodationId: number,
+    startDate?: string,
+    endDate?: string
+  ): Promise<ApiResponse> {
+    try {
+      let url = `${this.SERVER}/accomodations/${accommodationId}/availability`;
+      const params = new URLSearchParams();
+
+      if (startDate) params.append('startDate', startDate);
+      if (endDate) params.append('endDate', endDate);
+
+      if (params.toString()) url += `?${params.toString()}`;
+
+      const response = await axios.get(url, this.axiosConfig);
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Nem sikerült az elérhetőség betöltése!',
+      };
+    }
+  }
+
+  async selectAccomodationBookings(
+    accommodationId: number
+  ): Promise<ApiResponse> {
+    try {
+      const response = await axios.get(
+        `${this.SERVER}/bookings/accommodation/${accommodationId}`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        data: response.data,
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Nem sikerült a foglalások betöltése!',
+      };
+    }
+  }
+
+  async createBooking(bookingData: any): Promise<ApiResponse> {
+    try {
+      const response = await axios.post(
+        `${this.SERVER}/bookings`,
+        bookingData,
+        this.axiosConfig
+      );
+      return {
+        status: 201,
+        data: response.data,
+        message: 'Foglalás sikeresen létrehozva!',
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Nem sikerült a foglalás létrehozása!',
+      };
+    }
+  }
+
+
+  async post(path: string, data: any): Promise<ApiResponse> {
+    try {
+      const normalizedPath = this.normalizePath(path);
+      const url = path.startsWith('http') ? path : `${this.SERVER}${normalizedPath}`;
+      const response = await axios.post(url, data, this.axiosConfig);
+      return { status: 200, data: response.data };
+    } catch (error: any) {
+      return { status: 500, message: 'Hiba történt a POST kérelem során' };
+    }
+  }
+
+
+
+  async insert(table: string, data: any) {
+    try {
+      const response = await axios.post(
+        `${this.SERVER}/${table}`,
+        data,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        message: 'A rekord felvéve!',
+        data: response.data, // nem kötelező visszaköldeni
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Hiba történt a művelet során!',
+      };
+    }
+  }
+
+
+  async update(table: string, id: number, data: any) {
+    try {
+      const response = await axios.patch(
+        `${this.SERVER}/${table}/${id}`,
+        data,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        message: 'A rekord módosítva!',
+        data: response.data, // nem kötelező visszaköldeni
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Hiba történt a művelet során!',
+      };
+    }
+  }
+
+
+  async delete(table: string, id: number) {
+    try {
+      const response = await axios.delete(
+        `${this.SERVER}/${table}/${id}`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        message: 'A rekord törölve a táblából!',
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Hiba történt a művelet során!',
+      };
+    }
+  }
+
+
+  async patch(path: string, data: any) {
+    try {
+      const normalizedPath = this.normalizePath(path);
+      const url = path.startsWith('http') ? path : `${this.SERVER}${normalizedPath}`;
+      const response = await axios.patch(url, data, this.axiosConfig);
+      return { status: 200, data: response.data };
+    } catch (error: any) {
+      return { status: 500, message: 'Hiba történt a PATCH kérelem során' };
+    }
+  }
+
+  async deletePath(path: string) {
+    try {
+      const normalizedPath = this.normalizePath(path);
+      const url = path.startsWith('http') ? path : `${this.SERVER}${normalizedPath}`;
+      const response = await axios.delete(url, this.axiosConfig);
+      return { status: 200, data: response.data };
+    } catch (error: any) {
+      return { status: 500, message: 'Hiba történt a DELETE kérelem során' };
+    }
+  }
+
+  async deleteAll(table: string) {
+    try {
+      const response = await axios.delete(
+        `${this.SERVER}/${table}`,
+        this.axiosConfig
+      );
+      return {
+        status: 200,
+        message: 'Összes rekord törölve a táblából!',
+      };
+    } catch (error: any) {
+      return {
+        status: 500,
+        message: 'Hiba történt a művelet során!',
+      };
+    }
+  }
+}
